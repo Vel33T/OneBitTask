@@ -32,11 +32,11 @@
             this.data.Update(user);
             this.data.SaveChanges();
 
-            return Ok(user.Status);
+            return Ok(user.Status.ToString());
         }
 
         [HttpDelete]
-        public IHttpActionResult Delete(string id)
+        public IHttpActionResult DeleteUser(string id)
         {
             var idAsGuid = new Guid(id);
             this.data.Delete(idAsGuid);
