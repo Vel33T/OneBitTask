@@ -14,8 +14,22 @@
     <script src="~/Scripts/bootstrap.min.js"></script>
 </head>
 <body>
-    <div> 
-
+    <div class="container">
+        <h2>Users</h2>
+        @foreach (var user in Model)
+        {
+            <div class="row">
+                <div class="col-md-3">
+                    <div>Name: @user.FirstName @user.LastName</div>
+                    <div>Telephone: @user.Telephone</div>
+                    <div>Sex: @user.Sex</div>
+                    <div>Status: @user.Status</div>
+                </div>
+                <div class="col-md-3">
+                    <img class="img-responsive img-thumbnail" src="@user.PhotoUrl" alt="UserPhoto" />
+                </div>
+            </div>
+        }
     </div>
 </body>
 </html>
