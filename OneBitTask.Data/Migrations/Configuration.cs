@@ -1,6 +1,8 @@
 namespace OneBitTask.Data.Migrations
 {
     using System.Data.Entity.Migrations;
+    
+    using Models;
 
     internal sealed class Configuration : DbMigrationsConfiguration<UsersDbContext>
     {
@@ -12,20 +14,21 @@ namespace OneBitTask.Data.Migrations
             this.AutomaticMigrationDataLossAllowed = true;
         }
 
-        protected override void Seed(OneBitTask.Data.UsersDbContext context)
+        protected override void Seed(UsersDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
+            ////Adding sample user to check database creation
+            //var user = new User
+            //{
+            //    FirstName = "Pesho",
+            //    LastName = "Goshov",
+            //    Sex = SexType.Male,
+            //    Telephone = "0897654321",
+            //    Status = StatusType.Active,
+            //    PhotoUrl = "http://www2.psd100.com/ppp/2013/11/2801/user-1128032201.png",
+            //};
 
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data. E.g.
-            //
-            //    context.People.AddOrUpdate(
-            //      p => p.FullName,
-            //      new Person { FullName = "Andrew Peters" },
-            //      new Person { FullName = "Brice Lambson" },
-            //      new Person { FullName = "Rowan Miller" }
-            //    );
-            //
+            //context.Users.Add(user);
+            //context.SaveChanges();
         }
     }
 }
