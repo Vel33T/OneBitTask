@@ -126,6 +126,7 @@
   <ItemGroup>
     <Content Include="Views\web.config" />
     <Content Include="packages.config" />
+    <Content Include="Views\UsersMvc\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -136,7 +137,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="ViewModels\" />
-    <Folder Include="Views\UsersMvc\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\OneBitTask.Common\OneBitTask.Common.csproj">
