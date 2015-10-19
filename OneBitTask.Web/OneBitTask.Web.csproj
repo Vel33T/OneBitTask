@@ -136,6 +136,20 @@
     <Folder Include="Controllers\" />
     <Folder Include="Models\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OneBitTask.Common\OneBitTask.Common.csproj">
+      <Project>{2caf54b0-4ac7-42f7-aaab-b5475aff3bba}</Project>
+      <Name>OneBitTask.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneBitTask.Data\OneBitTask.Data.csproj">
+      <Project>{295244af-e804-4120-8103-4b53e1b336d9}</Project>
+      <Name>OneBitTask.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneBitTask.Models\OneBitTask.Models.csproj">
+      <Project>{f76ce6fa-add7-40f7-b571-44e93f097cb2}</Project>
+      <Name>OneBitTask.Models</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
