@@ -26,33 +26,33 @@
             return this.set;
         }
 
-        public T GetById(object id)
+        public virtual T GetById(object id)
         {
             return this.set.Find(id);
         }
 
-        public void Add(T entity)
+        public virtual void Add(T entity)
         {
             this.ChangeEntityState(entity, EntityState.Added);
         }
 
-        public void Update(T entity)
+        public virtual void Update(T entity)
         {
             this.ChangeEntityState(entity, EntityState.Modified);
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             this.ChangeEntityState(entity, EntityState.Deleted);
         }
 
-        public void Delete(object id)
+        public virtual void Delete(object id)
         {
             var entity = this.GetById(id);
             this.Delete(entity);
         }
 
-        public void Detach(T entity)
+        public virtual void Detach(T entity)
         {
             this.ChangeEntityState(entity, EntityState.Detached);
         }
