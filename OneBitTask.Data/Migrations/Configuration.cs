@@ -1,8 +1,9 @@
 namespace OneBitTask.Data.Migrations
 {
     using System.Data.Entity.Migrations;
-    
+
     using Models;
+    using Common;
 
     internal sealed class Configuration : DbMigrationsConfiguration<UsersDbContext>
     {
@@ -17,40 +18,27 @@ namespace OneBitTask.Data.Migrations
         //TODO: Do it right!
         protected override void Seed(UsersDbContext context)
         {
-            ////Adding sample user to check database creation
-            //var user = new User
-            //{
-            //    FirstName = "Pesho",
-            //    LastName = "Goshov",
-            //    Sex = SexType.Male,
-            //    Telephone = "0897654321",
-            //    Status = StatusType.Active,
-            //    PhotoUrl = "http://www2.psd100.com/ppp/2013/11/2801/user-1128032201.png",
-            //};
+            const string MalePictureUrl = "http://www2.psd100.com/ppp/2013/11/2801/user-1128032201.png";
+            const string FemalePictureUrl = "http://wcdn3.dataknet.com/static/resources/icons/set47/790d2343.png";
 
-            //var user2 = new User
-            //{
-            //    FirstName = "Penka",
-            //    LastName = "Loshoto(the ex)",
-            //    Sex = SexType.Female,
-            //    Telephone = "0897612341",
-            //    Status = StatusType.Deleted,
-            //    PhotoUrl = "http://wcdn3.dataknet.com/static/resources/icons/set47/790d2343.png",
-            //};
-            //context.Users.Add(user2);
+            IRandomGenerator random = new RandomGenerator();
 
-            //var user3 = new User
-            //{
-            //    FirstName = "Ivanka",
-            //    LastName = "Goshova",
-            //    Sex = SexType.Female,
-            //    Telephone = "0897456321",
-            //    Status = StatusType.Inactive,
-            //    PhotoUrl = "http://wcdn3.dataknet.com/static/resources/icons/set47/790d2343.png",
-            //};
-            //context.Users.Add(user3);
+            for (int i = 0; i < 10; i++)
+            {
+                var user = new User
+                {
+                    FirstName = random.RandomFirstName(),
+                    LastName = random.RandomLastName(),
+                    Sex = (SexType)random.RandomNumber(0, 2),
+                    Telephone = "0" + random.RandomNumber(897000000, 897999999).ToString(),
+                    Status = (StatusType)random.RandomNumber(0, 2),
+                    PhotoUrl = random.RandomNumber(0, 1) == 0 ? FemalePictureUrl : MalePictureUrl,
+                };
 
-            //context.SaveChanges();
+                context.Users.Add(user);
+            }
+
+            context.SaveChanges();
         }
     }
 }
