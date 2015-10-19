@@ -49,11 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IUsersDbContext.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersDbContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\OneBitTask.Common\OneBitTask.Common.csproj">
+      <Project>{2caf54b0-4ac7-42f7-aaab-b5475aff3bba}</Project>
+      <Name>OneBitTask.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\OneBitTask.Models\OneBitTask.Models.csproj">
+      <Project>{f76ce6fa-add7-40f7-b571-44e93f097cb2}</Project>
+      <Name>OneBitTask.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

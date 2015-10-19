@@ -1,15 +1,17 @@
 ﻿namespace OneBitTask.Data
 {
-    using Models;
-    using System.Data.Entity;
     using System;
+    using System.Data.Entity;
+
+    using Models;
+    using Migrations;
 
     public class UsersDbContext : DbContext, IUsersDbContext
     {
         public UsersDbContext()
             : base("UsersDatabase")
         {
-
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<UsersDbContext, Configuration>());
         }
 
         public virtual IDbSet<User> Users { get; set; }
