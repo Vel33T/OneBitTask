@@ -20,10 +20,13 @@
         {
             <div class="row">
                 <div class="col-md-3">
+                    <div hidden id="@user.Id"></div>
                     <div>Name: @user.FirstName @user.LastName</div>
                     <div>Telephone: @user.Telephone</div>
                     <div>Sex: @user.Sex</div>
-                    <div>Status: @user.Status</div>
+                    <div id="status">Status: @user.Status</div>
+                    <button class="btn btn-info">Change Status</button>
+                    <button class="btn btn-danger">Delete</button>
                 </div>
                 <div class="col-md-3">
                     <img class="img-responsive img-thumbnail" src="@user.PhotoUrl" alt="UserPhoto" />
