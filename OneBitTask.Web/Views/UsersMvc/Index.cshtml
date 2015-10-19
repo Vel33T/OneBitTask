@@ -19,20 +19,28 @@
         @foreach (var user in Model)
         {
             <div class="row">
-                <div class="col-md-3">
-                    <div hidden id="@user.Id"></div>
-                    <div>Name: @user.FirstName @user.LastName</div>
-                    <div>Telephone: @user.Telephone</div>
-                    <div>Sex: @user.Sex</div>
-                    <div id="status">Status: @user.Status</div>
-                    <button class="btn btn-info">Change Status</button>
-                    <button class="btn btn-danger">Delete</button>
+                <div class="col-md-4">
+                    <div>
+                        Name: @user.FirstName @user.LastName
+                    </div>
+                    <div>
+                        Telephone: @user.Telephone
+                    </div>
+                    <div>
+                        Sex: @user.Sex
+                    </div>
+                    <div id="status">
+                        <span>Status: @user.Status</span>
+                        <button value="@user.Id" class="btnChangeStatus btn btn-info">Change Status</button>
+                    </div>
+                    <button value="@user.Id" id="@user.Id" class="btnDelete btn btn-danger">Delete</button>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4">
                     <img class="img-responsive img-thumbnail" src="@user.PhotoUrl" alt="UserPhoto" />
                 </div>
             </div>
         }
     </div>
+    <script src="~/Scripts/custom.js"></script>
 </body>
 </html>
