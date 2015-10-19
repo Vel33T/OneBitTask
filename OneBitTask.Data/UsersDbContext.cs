@@ -23,7 +23,7 @@
 
         public new IDbSet<TEntity> Set<TEntity>() where TEntity : class
         {
-            throw new NotImplementedException();
+            return base.Set<TEntity>();
         }
     }
 }
