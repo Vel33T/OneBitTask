@@ -8,7 +8,6 @@
         private IUsersDbContext context;
         private IDbSet<T> set;
 
-        //TODO: Remove and use Ninject/StructureMap
         //Poor man's DI
         public GenericRepository()
             : this(new UsersDbContext())
