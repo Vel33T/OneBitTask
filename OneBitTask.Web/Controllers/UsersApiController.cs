@@ -8,7 +8,12 @@
 
     public class UsersApiController : ApiController
     {
-        private IRepository<User> data = new GenericRepository<User>();
+        private IRepository<User> data;
+
+        public UsersApiController(IRepository<User> data)
+        {
+            this.data = data;
+        }
 
         //TODO: Validation
         [HttpPut]
@@ -20,6 +25,7 @@
             {
                 return BadRequest(String.Format("User with Id: {0} does not exist.", id));
             }
+
             if (user.Status == StatusType.Active)
             {
                 user.Status = StatusType.Inactive;
@@ -39,6 +45,7 @@
         public IHttpActionResult DeleteUser(string id)
         {
             var idAsGuid = new Guid(id);
+
             this.data.Delete(idAsGuid);
             this.data.SaveChanges();
 
