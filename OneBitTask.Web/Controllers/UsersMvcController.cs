@@ -5,10 +5,16 @@
 
     using Data.Repositories;
     using ViewModels;
+    using Models;
 
     public class UsersMvcController : Controller
     {
-        private UsersRepository data = new UsersRepository();
+        private IRepository<User> data;
+
+        public UsersMvcController(IRepository<User> data)
+        {
+            this.data = data;
+        }
 
         public ActionResult Index()
         {
