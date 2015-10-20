@@ -11,7 +11,6 @@
             $(self).parent().find('span').text('Status: ' + newStatus);
         }
     });
-
 });
 
 $('.btnDelete').on('click', function () {
@@ -27,5 +26,4 @@ $('.btnDelete').on('click', function () {
             $(self).parent().parent().fadeOut(1000);
         }
     });
-
 });
