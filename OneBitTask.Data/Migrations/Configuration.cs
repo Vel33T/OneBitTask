@@ -15,8 +15,7 @@ namespace OneBitTask.Data.Migrations
             //TODO: Set to false in produciton
             this.AutomaticMigrationDataLossAllowed = true;
         }
-
-        //TODO: Do it right!
+        
         protected override void Seed(UsersDbContext context)
         {
             const string MalePictureUrl = "http://www2.psd100.com/ppp/2013/11/2801/user-1128032201.png";
