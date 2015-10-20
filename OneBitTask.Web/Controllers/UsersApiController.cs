@@ -8,7 +8,7 @@
 
     public class UsersApiController : ApiController
     {
-        private UsersRepository data = new UsersRepository();
+        private IRepository<User> data = new GenericRepository<User>();
 
         //TODO: Validation
         [HttpPut]
