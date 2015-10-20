@@ -5,6 +5,11 @@
 
     public class UsersRepository : GenericRepository<User>
     {
+        public UsersRepository(IUsersDbContext context)
+            : base(context)
+        {
+        }
+
         public override IQueryable<User> All()
         {
             return base.All().Where(user => user.Status != StatusType.Deleted);

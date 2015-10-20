@@ -8,12 +8,6 @@
         private IUsersDbContext context;
         private IDbSet<T> set;
 
-        //Poor man's DI
-        public GenericRepository()
-            : this(new UsersDbContext())
-        {
-        }
-
         public GenericRepository(IUsersDbContext context)
         {
             this.context = context;
