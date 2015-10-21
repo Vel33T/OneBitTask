@@ -12,6 +12,7 @@ namespace OneBitTask.Web.App_Start
     using Ninject.Web.Common;
     using Data;
     using Data.Repositories;
+    using Models;
 
     public static class NinjectWebCommon 
     {
@@ -65,6 +66,7 @@ namespace OneBitTask.Web.App_Start
         {
             kernel.Bind<IUsersDbContext>().To<UsersDbContext>();
             kernel.Bind(typeof(IRepository<>)).To(typeof(GenericRepository<>));
+            kernel.Bind<IRepository<User>>().To<UsersRepository>();
         }        
     }
 }
